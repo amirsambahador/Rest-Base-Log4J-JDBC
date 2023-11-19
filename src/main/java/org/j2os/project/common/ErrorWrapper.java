@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
-//@Slf4j
+
 public class ErrorWrapper {
     private static final Logger LOGGER =  Logger.getLogger(ErrorWrapper.class);
     private ErrorWrapper() {
@@ -16,8 +16,6 @@ public class ErrorWrapper {
     public static Map<String, String> getError(Exception exception) {
         LOGGER.error(exception);
         exception.printStackTrace();
-
-        //log.error("J2OS Error Log: ",exception);
 
         Map<String, String> map = new HashMap<>();
         if (exception instanceof SQLException) {
